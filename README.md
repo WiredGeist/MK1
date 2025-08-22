@@ -70,23 +70,26 @@ All commands should be run from the root of your Isaac Lab repository.
 
 This repository includes a working policy for active balancing. To see it in action, run the following command. Make sure to replace the placeholder with the correct path to the included `.pth` file.
 
-```bash
-isaaclab.bat -p scripts/reinforcement_learning/rl_games/play.py --task RobotMK1-ActiveBalance-v0 --num_envs 1 --checkpoint <PATH_TO_REPO>/weights/robotmk1_balance.pth
-Training From Scratch
-To train your own policy from the beginning, use the following command:
-code
-Bash
-isaaclab.bat -p scripts/reinforcement_learning/rl_games/train.py --task RobotMK1-ActiveBalance-v0 --num_envs 128 --max_iterations 5000 --headless
-Project Structure
-mk1.urdf: The Universal Robot Description Format file, defining the robot's physical properties.
-mk1.usd: The Universal Scene Description file, used by Isaac Sim to render the robot.
-/meshes: Contains the .stl files for each part of the robot's body.
-/robotmk1: Contains all the Python code for the Isaac Lab environment.
-/weights: Contains the pre-trained balancing policy (robotmk1_balance.pth).
-License
-This project is released into the public domain under The Unlicense.
+## Project Structure
+
+*   `mk1.urdf`: The Universal Robot Description Format file, defining the robot's physical properties.
+*   `mk1.usd`: The Universal Scene Description file, used by Isaac Sim to render the robot.
+*   `/meshes`: Contains the `.stl` files for each part of the robot's body.
+*   `/robotmk1`: Contains all the Python code for the Isaac Lab environment.
+*   `/weights`: Contains the pre-trained balancing policy (`robotmk1_balance.pth`).
+
+---
+
+## License
+
+This project is released into the public domain under **The Unlicense**.
+
 This means you are free to copy, modify, distribute, and use these files for any purpose, without any conditions.
+
 While not required, a link back to my YouTube channel is always appreciated if you find this project helpful!
-Created by Wirdegeist
-Website: https://wirdegeist.com
-YouTube: https://www.youtube.com/@WiredGeist
+
+---
+
+**Created by Wirdegeist**
+*   **Website:** [https://wirdegeist.com](https://wirdegeist.com)
+*   **YouTube:** [https://www.youtube.com/@WiredGeist](https://www.youtube.com/@WiredGeist)
