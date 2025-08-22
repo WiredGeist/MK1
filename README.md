@@ -4,8 +4,6 @@ This repository contains all the necessary files to simulate and train the Mk1 h
 
 **[Watch the full story of this robot's development on YouTube](https://www.youtube.com/@WiredGeist)**
 
-![Mk1 Balancing GIF](<path/to/a/cool/gif/of/your/robot/balancing>)
-
 ---
 
 ## Prerequisites
