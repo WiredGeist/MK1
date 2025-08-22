@@ -72,11 +72,14 @@ This repository includes a working policy for active balancing. To see it in act
 
 ## Project Structure
 
-*   `mk1.urdf`: The Universal Robot Description Format file, defining the robot's physical properties.
-*   `mk1.usd`: The Universal Scene Description file, used by Isaac Sim to render the robot.
-*   `/meshes`: Contains the `.stl` files for each part of the robot's body.
-*   `/robotmk1`: Contains all the Python code for the Isaac Lab environment.
-*   `/weights`: Contains the pre-trained balancing policy (`robotmk1_balance.pth`).
+*   `/isaacsim`: Contains all files related to the Isaac Lab simulation.
+    *   `/isaacsim/mk1`: **This is the core environment folder.** It contains all the Python code that needs to be copied into the Isaac Lab tasks directory.
+        *   `/agents`: Holds the RL Games configuration (`.yaml`) for the training agent.
+        *   `/mdp`: Holds the custom Python files (`rewards.py`, `observations.py`, etc.) that define the environment's logic.
+    *   `/isaacsim/trained weight`: Contains the pre-trained balancing policy (`.pth` file).
+*   `/meshes`: Contains all the individual `.stl` part files for the robot's geometry.
+*   `/urdf`: Contains the `mk1.urdf` file defining the robot's joints and links.
+*   `/usd`: Contains the `mk1.usd` file used for rendering in Isaac Sim.
 
 ---
 
