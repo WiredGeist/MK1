@@ -2,7 +2,7 @@
 
 This repository contains all the necessary files to simulate and train the Mk1 humanoid robot, as featured in my YouTube series. This project provides the simulation assets (URDF, USD, meshes), the complete Isaac Lab environment code, and a pre-trained policy for active balancing.
 
-**[Watch the full story of this robot's development on YouTube](https://www.youtube.com/@WiredGeist)**
+**[Watch the full story of this robot's development on YouTube]([https://www.youtube.com/@WiredGeist](https://youtu.be/maLKFQQSpLs))**
 
 ---
 
