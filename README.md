@@ -72,6 +72,8 @@ This repository includes a working policy for active balancing. To see it in act
 
 ## Project Structure
 
+*   `/Autocad Inventor`: Contains all files related to the Autocad Inventor CAD.
+*   `/Solidworks`: Contains all files related to the Solidworks CAD.
 *   `/isaacsim`: Contains all files related to the Isaac Lab simulation.
     *   `/isaacsim/mk1`: **This is the core environment folder.** It contains all the Python code that needs to be copied into the Isaac Lab tasks directory.
         *   `/agents`: Holds the RL Games configuration (`.yaml`) for the training agent.
