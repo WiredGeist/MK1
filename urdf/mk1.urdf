@@ -1,0 +1,983 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+==================================================================================
+ Mk1 Humanoid Robot Project
+
+ Author:  Wirdegeist
+ Website: https://wirdegeist.com
+ YouTube: https://www.youtube.com/@WiredGeist
+ 
+ The original designer of the robot is Wirdegeist.
+==================================================================================
+-->
+<robot
+  name="solidrobot_simplified_with_boots">
+  <link
+    name="torso_link">
+    <inertial>
+      <origin
+        xyz="0.0735570250245862 -0.00657098415022939 0.316873993806097"
+        rpy="0 0 0" />
+      <mass
+        value="0.140954032720336" />
+      <inertia
+        ixx="0.000546230062299278"
+        ixy="3.30807255277636E-07"
+        ixz="5.26351692219932E-07"
+        iyy="0.000630300371054323"
+        iyz="8.38720219041125E-07"
+        izz="0.000288402650458768" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://solidrobot_simplified_with_boots/meshes/torso_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://solidrobot_simplified_with_boots/meshes/torso_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="left_hip_roll_link">
+    <inertial>
+      <origin
+        xyz="-0.000114947547805805 0.0536490438077871 0.000177431648711757"
+        rpy="0 0 0" />
+      <mass
+        value="0.254332179235878" />
+      <inertia
+        ixx="0.000128370450619945"
+        ixy="-1.96130685282633E-07"
+        ixz="-2.61897435863812E-07"
+        iyy="0.000237360602932836"
+        iyz="2.96641272829929E-07"
+        izz="0.000130425200675122" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://solidrobot_simplified_with_boots/meshes/left_hip_roll_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://solidrobot_simplified_with_boots/meshes/left_hip_roll_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_hip_roll_joint"
+    type="revolute">
+    <origin
+      xyz="0.13715 0.026612 0.08935"
+      rpy="1.5708 0 0" />
+    <parent
+      link="torso_link" />
+    <child
+      link="left_hip_roll_link" />
+    <axis
+      xyz="0.0020373 -1 -0.0022436" />
+    <limit
+      lower="-0.52"
+      upper="1.57"
+      effort="3"
+      velocity="5" />
+  </joint>
+  <link
+    name="left_hip_yaw_link">
+    <inertial>
+      <origin
+        xyz="-4.98949515152225E-05 -2.8843978775589E-06 -0.00117839053662356"
+        rpy="0 0 0" />
+      <mass
+        value="0.25433233181562" />
+      <inertia
+        ixx="0.00013042649146065"
+        ixy="2.70804602762724E-07"
+        ixz="-5.96031153416352E-07"
+        iyy="0.00012836998621528"
+        iyz="-2.69684578929918E-07"
+        izz="0.000237355790521917" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://solidrobot_simplified_with_boots/meshes/left_hip_yaw_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://solidrobot_simplified_with_boots/meshes/left_hip_yaw_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_hip_yaw_joint"
+    type="revolute">
+    <origin
+      xyz="4.8954E-05 -0.024028 -5.391E-05"
+      rpy="0 0 0" />
+    <parent
+      link="left_hip_roll_link" />
+    <child
+      link="left_hip_yaw_link" />
+    <axis
+      xyz="0.006112 0.002256 -0.99998" />
+    <limit
+      lower="-0.785"
+      upper="0.758"
+      effort="3"
+      velocity="4" />
+  </joint>
+  <link
+    name="left_thigh_link">
+    <inertial>
+      <origin
+        xyz="0.02624021050843 -0.0156327198586472 -0.00035154755420113"
+        rpy="0 0 0" />
+      <mass
+        value="0.57208527692512" />
+      <inertia
+        ixx="0.0010936175515106"
+        ixy="-2.55175532781407E-06"
+        ixz="-4.35838232091451E-06"
+        iyy="0.000277668567968848"
+        iyz="5.55501349296024E-06"
+        izz="0.000860495273148505" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://solidrobot_simplified_with_boots/meshes/left_thigh_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://solidrobot_simplified_with_boots/meshes/left_thigh_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_hip_pitch_joint"
+    type="revolute">
+    <origin
+      xyz="-0.00046757 -0.00017258 0.076498"
+      rpy="2.7054E-05 -0.025186 0.004023" />
+    <parent
+      link="left_hip_yaw_link" />
+    <child
+      link="left_thigh_link" />
+    <axis
+      xyz="0.99979 0.0068966 -0.019048" />
+    <limit
+      lower="-0.7"
+      upper="2.09"
+      effort="5"
+      velocity="6" />
+  </joint>
+  <link
+    name="left_shin_link">
+    <inertial>
+      <origin
+        xyz="0.019108490758436 -0.0405818717609644 -0.00138473269690644"
+        rpy="0 0 0" />
+      <mass
+        value="0.0550708966807955" />
+      <inertia
+        ixx="9.776786831143E-05"
+        ixy="1.01843316788988E-06"
+        ixz="2.01132046640734E-08"
+        iyy="4.93562692649183E-06"
+        iyz="-7.13560017091563E-07"
+        izz="9.57732120805793E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://solidrobot_simplified_with_boots/meshes/left_shin_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://solidrobot_simplified_with_boots/meshes/left_shin_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_knee_pitch_joint"
+    type="revolute">
+    <origin
+      xyz="0.0098801 -0.19991 0.0028715"
+      rpy="-0.022985 0.024934 -0.0041624" />
+    <parent
+      link="left_thigh_link" />
+    <child
+      link="left_shin_link" />
+    <axis
+      xyz="0.99992 0.01092 0.0061363" />
+    <limit
+      lower="0"
+      upper="2.618"
+      effort="5"
+      velocity="6" />
+  </joint>
+  <link
+    name="right_hip_roll_link">
+    <inertial>
+      <origin
+        xyz="-0.000118264859322884 0.053736541481577 6.46134893143337E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.254334592210614" />
+      <inertia
+        ixx="0.000128384666047486"
+        ixy="-1.98560621029036E-07"
+        ixz="3.43081097069306E-07"
+        iyy="0.000237361805265284"
+        iyz="1.84399720050056E-07"
+        izz="0.000130411120041498" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://solidrobot_simplified_with_boots/meshes/right_hip_roll_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://solidrobot_simplified_with_boots/meshes/right_hip_roll_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_hip_roll_joint"
+    type="revolute">
+    <origin
+      xyz="0.011152 0.027111 0.089008"
+      rpy="1.5708 0 0" />
+    <parent
+      link="torso_link" />
+    <child
+      link="right_hip_roll_link" />
+    <axis
+      xyz="0.0020373 -1 -0.0022436" />
+    <limit
+      lower="-1.57"
+      upper="0.52"
+      effort="3"
+      velocity="5" />
+  </joint>
+  <link
+    name="right_hip_yaw_link">
+    <inertial>
+      <origin
+        xyz="1.74110372218664E-07 -2.91370063179586E-06 -0.001179346312974"
+        rpy="0 0 0" />
+      <mass
+        value="0.254334774028104" />
+      <inertia
+        ixx="0.000130669401208267"
+        ixy="-2.50326829379565E-07"
+        ixz="5.08632255903003E-06"
+        iyy="0.000128366981226726"
+        iyz="-2.47277328405126E-07"
+        izz="0.000237117629198696" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://solidrobot_simplified_with_boots/meshes/right_hip_yaw_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://solidrobot_simplified_with_boots/meshes/right_hip_yaw_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_hip_yaw_joint"
+    type="revolute">
+    <origin
+      xyz="4.8777E-05 -0.023941 -5.3714E-05"
+      rpy="0 0 0" />
+    <parent
+      link="right_hip_roll_link" />
+    <child
+      link="right_hip_yaw_link" />
+    <axis
+      xyz="0.019063 -0.0022043 0.99982" />
+    <limit
+      lower="-0.785"
+      upper="0.785"
+      effort="3"
+      velocity="4" />
+  </joint>
+  <link
+    name="right_thigh_link">
+    <inertial>
+      <origin
+        xyz="-0.023722181580248 -0.0160855953333057 0.000698786593479724"
+        rpy="0 0 0" />
+      <mass
+        value="0.572079440193965" />
+      <inertia
+        ixx="0.00109320963042545"
+        ixy="1.73421620337816E-05"
+        ixz="-5.50706816463634E-06"
+        iyy="0.000278007022282636"
+        iyz="4.11615583923588E-06"
+        izz="0.000860558231618425" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://solidrobot_simplified_with_boots/meshes/right_thigh_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://solidrobot_simplified_with_boots/meshes/right_thigh_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_hip_pitch_joint"
+    type="revolute">
+    <origin
+      xyz="0.00145834093639978 -0.000168630839315592 0.0764859124633704"
+      rpy="-0.000128406254902389 0.0251852503721244 -0.00402498936357036" />
+    <parent
+      link="right_hip_yaw_link" />
+    <child
+      link="right_thigh_link" />
+    <axis
+      xyz="0.999921547423843 0.0109199351488499 0.00613628665008884" />
+    <limit
+      lower="-0.7"
+      upper="2.09"
+      effort="5"
+      velocity="6" />
+  </joint>
+  <link
+    name="right_shin_link">
+    <inertial>
+      <origin
+        xyz="-0.0128186287602509 -0.0408872885434479 0.00193320534232777"
+        rpy="0 0 0" />
+      <mass
+        value="0.0550709021777974" />
+      <inertia
+        ixx="9.77689176276829E-05"
+        ixy="7.25395261876219E-07"
+        ixz="-1.12359080176406E-07"
+        iyy="4.97154342219153E-06"
+        iyz="2.06346361804004E-06"
+        izz="9.57364641714847E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://solidrobot_simplified_with_boots/meshes/right_shin_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://solidrobot_simplified_with_boots/meshes/right_shin_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_knee_pitch_joint"
+    type="revolute">
+    <origin
+      xyz="-0.0094743 -0.20011 0.0014179"
+      rpy="0.0077519 -0.025132 0.0038761" />
+    <parent
+      link="right_thigh_link" />
+    <child
+      link="right_shin_link" />
+    <axis
+      xyz="0.99979 0.0068966 -0.019048" />
+    <limit
+      lower="0"
+      upper="2.168"
+      effort="5"
+      velocity="6" />
+  </joint>
+  <link
+    name="left_shoulder_roll_link">
+    <inertial>
+      <origin
+        xyz="0.000562880637330787 -6.3948333092867E-05 0.0265336304661822"
+        rpy="0 0 0" />
+      <mass
+        value="0.254334487262645" />
+      <inertia
+        ixx="0.000130467885898882"
+        ixy="-2.43266258718182E-07"
+        ixz="1.98050290460694E-06"
+        iyy="0.00012836708733508"
+        iyz="-2.61308156784542E-07"
+        izz="0.000237327617483522" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://solidrobot_simplified_with_boots/meshes/left_shoulder_roll_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://solidrobot_simplified_with_boots/meshes/left_shoulder_roll_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_shoulder_roll_joint"
+    type="revolute">
+    <origin
+      xyz="0.110998882399488 -0.0455051734901898 0.409108272533761"
+      rpy="-3.13998171436938 -1.55376021799605 -0.00777342947461764" />
+    <parent
+      link="torso_link" />
+    <child
+      link="left_shoulder_roll_link" />
+    <axis
+      xyz="0.0190632802144107 -0.00220432469658122 0.99981584919429" />
+    <limit
+      lower="-2"
+      upper="2"
+      effort="17"
+      velocity="40" />
+  </joint>
+  <link
+    name="left_shoulder_pitch_link">
+    <inertial>
+      <origin
+        xyz="-8.06497817698593E-06 0.00117790273201723 5.9715824544504E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.254332332795262" />
+      <inertia
+        ixx="0.000128370500046284"
+        ixy="-1.95959888496512E-07"
+        ixz="-2.61649040304979E-07"
+        iyy="0.000237359210531814"
+        iyz="2.96508163610343E-07"
+        izz="0.000130423760195869" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://solidrobot_simplified_with_boots/meshes/left_shoulder_pitch_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://solidrobot_simplified_with_boots/meshes/left_shoulder_pitch_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_shoulder_pitch_joint"
+    type="revolute">
+    <origin
+      xyz="0.00198672795906335 -0.000229729273066762 0.104198337283602"
+      rpy="-0.0213055135351303 0.0062351092643732 -1.56605493337887" />
+    <parent
+      link="left_shoulder_roll_link" />
+    <child
+      link="left_shoulder_pitch_link" />
+    <axis
+      xyz="0.00203734066689205 -0.999995407816482 -0.00224356612445874" />
+    <limit
+      lower="-2"
+      upper="3.14"
+      effort="17"
+      velocity="40" />
+  </joint>
+  <link
+    name="left_elbow_pitch_link">
+    <inertial>
+      <origin
+        xyz="0.0262419808146382 -0.0156316227176256 -0.000258366654039097"
+        rpy="0 0 0" />
+      <mass
+        value="0.572085158074377" />
+      <inertia
+        ixx="0.0010936197074511"
+        ixy="-2.48604906918452E-06"
+        ixz="-4.3348778646848E-06"
+        iyy="0.000277753641389354"
+        iyz="8.98832413368173E-06"
+        izz="0.000860410519768" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://solidrobot_simplified_with_boots/meshes/left_elbow_pitch_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://solidrobot_simplified_with_boots/meshes/left_elbow_pitch_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_elbow_pitch_joint"
+    type="revolute">
+    <origin
+      xyz="0.000155856561017853 -0.0764996486979603 -0.000171632808521061"
+      rpy="2.79152858070666 -1.54402236122594 -2.79631801473116" />
+    <parent
+      link="left_shoulder_pitch_link" />
+    <child
+      link="left_elbow_pitch_link" />
+    <axis
+      xyz="0.999794790284537 0.00689662632856149 -0.0190476734847979" />
+    <limit
+      lower="0"
+      upper="2.6"
+      effort="17"
+      velocity="40" />
+  </joint>
+  <link
+    name="left_wrist_pitch_link">
+    <inertial>
+      <origin
+        xyz="0.0190649789419251 -0.0406665968639205 0.000255353087503879"
+        rpy="0 0 0" />
+      <mass
+        value="0.0550708955224606" />
+      <inertia
+        ixx="9.77736058457863E-05"
+        ixy="6.66511179538506E-07"
+        ixz="-4.78918224629856E-08"
+        iyy="4.94413684270904E-06"
+        iyz="1.36443816528794E-06"
+        izz="9.5758966672094E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://solidrobot_simplified_with_boots/meshes/left_wrist_pitch_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://solidrobot_simplified_with_boots/meshes/left_wrist_pitch_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_wrist_pitch_joint"
+    type="revolute">
+    <origin
+      xyz="0.00975970538641727 -0.199914436587846 0.00287384018404002"
+      rpy="0 0 0" />
+    <parent
+      link="left_elbow_pitch_link" />
+    <child
+      link="left_wrist_pitch_link" />
+    <axis
+      xyz="0.999794790284537 0.00689662632855871 -0.0190476734847972" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="17"
+      velocity="40" />
+  </joint>
+  <link
+    name="right_shoulder_roll_link">
+    <inertial>
+      <origin
+        xyz="3.44666503487856E-06 1.67929965592256E-05 -0.00990348256062468"
+        rpy="0 0 0" />
+      <mass
+        value="0.254332241221674" />
+      <inertia
+        ixx="0.000130428405362356"
+        ixy="2.70812586286014E-07"
+        ixz="-5.95783582428312E-07"
+        iyy="0.000128369956646038"
+        iyz="-2.69728712508593E-07"
+        izz="0.000237357701007456" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://solidrobot_simplified_with_boots/meshes/right_shoulder_roll_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://solidrobot_simplified_with_boots/meshes/right_shoulder_roll_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_shoulder_roll_joint"
+    type="revolute">
+    <origin
+      xyz="-0.0010078 -0.045062 0.40888"
+      rpy="3.1389 1.5627 -0.0043854" />
+    <parent
+      link="torso_link" />
+    <child
+      link="right_shoulder_roll_link" />
+    <axis
+      xyz="0.006112 0.002256 -0.99998" />
+    <limit
+      lower="-2"
+      upper="2"
+      effort="17"
+      velocity="40" />
+  </joint>
+  <link
+    name="right_shoulder_pitch_link">
+    <inertial>
+      <origin
+        xyz="-8.06557944851849E-06 0.00117788443964417 5.97075974355099E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.254332313918456" />
+      <inertia
+        ixx="0.000128370474955642"
+        ixy="-1.95920098801516E-07"
+        ixz="-2.61553583162377E-07"
+        iyy="0.000237360371034128"
+        iyz="2.96623893417746E-07"
+        izz="0.000130424904119506" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://solidrobot_simplified_with_boots/meshes/right_shoulder_pitch_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://solidrobot_simplified_with_boots/meshes/right_shoulder_pitch_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_shoulder_pitch_joint"
+    type="revolute">
+    <origin
+      xyz="-0.00041424 -0.0001529 0.067773"
+      rpy="-3.1377 -0.0018009 -1.5578" />
+    <parent
+      link="right_shoulder_roll_link" />
+    <child
+      link="right_shoulder_pitch_link" />
+    <axis
+      xyz="0.0020373 -1 -0.0022436" />
+    <limit
+      lower="-3.14"
+      upper="0.2"
+      effort="17"
+      velocity="40" />
+  </joint>
+  <link
+    name="right_elbow_pitch_link">
+    <inertial>
+      <origin
+        xyz="-0.0259597051923321 -0.0160976473781251 -4.30628109905004E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.572079601817762" />
+      <inertia
+        ixx="0.00109333585278135"
+        ixy="1.71648014503785E-05"
+        ixz="1.27595310412635E-06"
+        iyy="0.000278001988353145"
+        iyz="4.43351094238932E-06"
+        izz="0.000860438578501976" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://solidrobot_simplified_with_boots/meshes/right_elbow_pitch_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://solidrobot_simplified_with_boots/meshes/right_elbow_pitch_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_elbow_pitch_joint"
+    type="revolute">
+    <origin
+      xyz="0.00015586 -0.0765 -0.00017163"
+      rpy="1.5711 -1.5577 -1.5581" />
+    <parent
+      link="right_shoulder_pitch_link" />
+    <child
+      link="right_elbow_pitch_link" />
+    <axis
+      xyz="0.99992 0.01092 0.0061363" />
+    <limit
+      lower="0"
+      upper="2.6"
+      effort="17"
+      velocity="40" />
+  </joint>
+  <link
+    name="right_wrist_pitch_link">
+    <inertial>
+      <origin
+        xyz="-0.0163542903086002 -0.0409816411124141 -0.000410741178507604"
+        rpy="0 0 0" />
+      <mass
+        value="0.0550706851244133" />
+      <inertia
+        ixx="9.77677564721736E-05"
+        ixy="1.01822792900537E-06"
+        ixz="1.98092042175632E-08"
+        iyy="4.9351474566022E-06"
+        iyz="-6.84987222347628E-07"
+        izz="9.57735590204762E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://solidrobot_simplified_with_boots/meshes/right_wrist_pitch_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://solidrobot_simplified_with_boots/meshes/right_wrist_pitch_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_wrist_pitch_joint"
+    type="revolute">
+    <origin
+      xyz="-0.0081214 -0.2001 0.0014262"
+      rpy="0 0 0" />
+    <parent
+      link="right_elbow_pitch_link" />
+    <child
+      link="right_wrist_pitch_link" />
+    <axis
+      xyz="0.99992 0.01092 0.0061363" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="17"
+      velocity="40" />
+  </joint>
+</robot>

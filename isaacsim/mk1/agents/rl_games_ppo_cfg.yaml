@@ -1,0 +1,90 @@
+# ==============================================================================
+# Mk1 Humanoid Robot Project - RL Games Training Configuration
+#
+# Author:  Wirdegeist
+# Website: https://wirdegeist.com
+# YouTube: https://www.youtube.com/@WiredGeist
+# ------------------------------------------------------------------------------
+# This file contains the hyperparameters for training the balancing policy
+# using the RL library.
+# ==============================================================================
+
+
+params:
+  seed: 42
+
+  env:
+    clip_actions: 1.0
+    clip_observations: 100.0
+
+  algo:
+    name: a2c_continuous
+
+  model:
+    name: continuous_a2c_logstd
+
+  network:
+    name: actor_critic
+    separate: True
+    space:
+      continuous:
+        mu_activation: None
+        sigma_activation: None
+        mu_init:
+          name: default
+        sigma_init:
+          name: const_initializer
+          val: 0
+        fixed_sigma: True
+    mlp:
+      units: [256, 128]      # Defines the size of the neural network layers.
+      activation: elu
+      d2rl: False
+      initializer:
+        name: default
+      regularizer:
+        name: None
+
+  load_checkpoint: False
+  load_path: ''
+
+  config:
+    # -- General Settings --
+    name: robotmk1_balance   # The name for this training run. Checkpoints will be saved under this name.
+    env_name: rlgpu
+    device: 'cuda:0'
+    multi_gpu: False
+    ppo: True
+    mixed_precision: True
+    normalize_input: True
+    normalize_value: True
+    value_bootstrap: True
+
+    # -- Core Reinforcement Learning Parameters --
+    num_actors: 4096          # The number of parallel environments (robots) to run for data collection.
+    reward_shaper:
+      scale_value: 0.01
+    normalize_advantage: True
+    gamma: 0.99               # Discount factor for future rewards.
+    tau: 0.95
+    learning_rate: 3.0e-4
+    lr_schedule: adaptive
+    kl_threshold: 0.008
+    score_to_win: 20000
+    max_epochs: 2000          # Total number of training epochs.
+    save_best_after: 100
+    save_frequency: 200
+    grad_norm: 1.0
+    entropy_coef: 0.0
+    truncate_grads: True
+    e_clip: 0.2
+    horizon_length: 24        # Number of steps each actor takes before sending experience to the learner.
+
+    # -- PPO (Proximal Policy Optimization) Update Parameters --
+    minibatch_size: 1024      # Size of the data chunks used during each learning update step.
+    mini_epochs: 8            # How many times the algorithm iterates over the collected data per epoch.
+
+    critic_coef: 4
+    clip_value: True
+    seq_length: 4
+    bounds_loss_coef: 0.0001
